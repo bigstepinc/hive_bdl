@@ -11,7 +11,7 @@ ENV JAVA_HOME /usr
 ENV PATH=$PATH:$HADOOP_HOME:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME:$HIVE_HOME/bin:$BDLCL_HOME/bin:$JAVA_HOME
 
 RUN apt-get -y update && \
-    apt-get install -y wget openjdk-8-jre
+    apt-get install -y wget openjdk-8-jre vim
     
 RUN cd /opt && \
     #Install hadoop
