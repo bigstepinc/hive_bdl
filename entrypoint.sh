@@ -99,7 +99,7 @@ if [ "$DB_TYPE" == "postgresql" ]; then
 	cp $HIVE_HOME/conf/hive-site.xml $HADOOP_HOME/etc/hadoop/hive-site.xml
 	
 	#this will be optional until we update the projects or data pool code
-	schematool -dbType postgres -upgradeSchema
+	#schematool -dbType postgres -upgradeSchema
 fi
 
 #Fix python not found file/directory issues
@@ -109,7 +109,27 @@ ln -s /usr/local/bin/python3.6 /usr/bin/python
 rm -rf /opt/bigstepdatalake-$BDLCL_VERSION/conf/core-site.xml
 cp $HADOOP_HOME/etc/hadoop/core-site.xml $BDLCL_HOME/conf/
 
+#fix all the jars issues
 rm $HIVE_HOME/lib/disruptor-3.3.0.jar 
+
+#fix guava
+cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/guava* $HIVE_HOME/lib/
+rm $HIVE_HOME/lib/guava-14.0.1.jar  
+cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/guava* $HADOOP_HOME/share/hadoop/common/lib/
+rm $HADOOP_HOME/share/hadoop/common/lib/guava-11.0.2.jar
+
+#fix bdlcl
+cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/bdl* $HIVE_HOME/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/gcs* $HIVE_HOME/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/google* $HIVE_HOME/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/spring* $HIVE_HOME/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/jackson* $HIVE_HOME/lib/
+
+cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/bdl* $HADOOP_HOME/share/hadoop/common/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/gcs* $HADOOP_HOME/share/hadoop/common/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/google* $HADOOP_HOME/share/hadoop/common/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/spring* $HADOOP_HOME/share/hadoop/common/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/jackson* $HADOOP_HOME/share/hadoop/common/lib/
 
 mkdir /tmp/hive 
 chmod -R 777 /tmp/hive
