@@ -134,6 +134,8 @@ cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/jackson* $HADOOP_HOME/share/hadoop/c
 mkdir /tmp/hive 
 chmod -R 777 /tmp/hive
 
+bdl -mkdir /spark-warehouse
+
 if [ "$MODE" == "" ]; then
 MODE=$1
 fi
