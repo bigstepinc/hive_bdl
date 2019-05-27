@@ -11,7 +11,6 @@ echo 'export JAVA_HOME=/usr' >> ~/.bashrc
 echo 'export PATH=$PATH:$HADOOP_HOME:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME:$HIVE_HOME/bin:$BDLCL_HOME/bin:$JAVA_HOME' >> ~/.bashrc
 echo 'export JAVA_CLASSPATH="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/"' >> ~/.bashrc
 echo 'export JAVA_OPTS="-Dsun.security.krb5.debug=true -XX:MetaspaceSize=128M -XX:MaxMetaspaceSize=256M"' >> ~/.bashrc
-echo 'export CLASSPATH=$CLASSPATH:/opt/gcs-connector-latest-hadoop2.jar' >> ~/.bashrc
 echo 'alias python=python3.6' >> ~/.bashrc
 source ~/.bashrc
 
@@ -46,18 +45,6 @@ if [ "$AUTH_METHOD" == "apikey" ]; then
 	fi
 	cp $HADOOP_HOME/etc/hadoop/core-site.xml $BDLCL_HOME/conf/
 fi
-
-#Configure log4j2.xml and core-site.xml based on the audit configuration
-
-if [ "$AUDIT_ENABLED" == "true" ]; then
-	echo "0"
-else
-	sed "s/AUDIT_ENABLE/false/" $HADOOP_HOME/etc/hadoop/core-site.xml >> $HADOOP_HOME/etc/hadoop/core-site.xml.tmp && \
-	mv $HADOOP_HOME/etc/hadoop/core-site.xml.tmp $HADOOP_HOME/etc/hadoop/core-site.xml
-
-	mv $SPARK_HOME/conf/log4j2.xml.default $SPARK_HOME/conf/log4j2.xml
-fi
-cp $HADOOP_HOME/etc/hadoop/core-site.xml $BDLCL_HOME/conf/
 
 if [ "$DB_TYPE" == "postgresql" ]; then
 	# Add metadata support
