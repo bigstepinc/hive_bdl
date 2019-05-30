@@ -113,23 +113,23 @@ cp $HADOOP_HOME/etc/hadoop/core-site.xml $BDLCL_HOME/conf/
 rm $HIVE_HOME/lib/disruptor-3.3.0.jar 
 
 #fix guava
-cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/guava* $HIVE_HOME/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/guava* $HIVE_HOME/lib/
 rm $HIVE_HOME/lib/guava-14.0.1.jar  
-cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/guava* $HADOOP_HOME/share/hadoop/common/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/guava* $HADOOP_HOME/share/hadoop/common/lib/
 rm $HADOOP_HOME/share/hadoop/common/lib/guava-11.0.2.jar
 
 #fix bdlcl
-cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/bdl* $HIVE_HOME/lib/
-cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/gcs* $HIVE_HOME/lib/
-cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/google* $HIVE_HOME/lib/
-cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/spring* $HIVE_HOME/lib/
-cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/jackson* $HIVE_HOME/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/bdl* $HIVE_HOME/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/gcs* $HIVE_HOME/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/google* $HIVE_HOME/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/spring* $HIVE_HOME/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/jackson* $HIVE_HOME/lib/
 
-cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/bdl* $HADOOP_HOME/share/hadoop/common/lib/
-cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/gcs* $HADOOP_HOME/share/hadoop/common/lib/
-cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/google* $HADOOP_HOME/share/hadoop/common/lib/
-cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/spring* $HADOOP_HOME/share/hadoop/common/lib/
-cp /opt/bigstepdatalake-$BDLCL_VERSION/jars/jackson* $HADOOP_HOME/share/hadoop/common/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/bdl* $HADOOP_HOME/share/hadoop/common/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/gcs* $HADOOP_HOME/share/hadoop/common/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/google* $HADOOP_HOME/share/hadoop/common/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/spring* $HADOOP_HOME/share/hadoop/common/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/jackson* $HADOOP_HOME/share/hadoop/common/lib/
 
 mkdir /tmp/hive 
 chmod -R 777 /tmp/hive
