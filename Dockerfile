@@ -43,7 +43,7 @@ RUN cd /opt && \
 
 #Add configuration files
 ADD log4j2.xml.default $HADOOP_HOME/etc/hadoop/log4j2.xml
-ADD core-site.xml.apiKey $HIVE_HOME/conf/
+ADD core-site.xml.apiKey $HIVE_HOME/conf/core-site.xml.apiKey
 ADD hive-site.xml $HIVE_HOME/conf/hive-site.xml
 ADD entrypoint.sh /
 
