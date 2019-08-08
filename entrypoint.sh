@@ -163,6 +163,13 @@ rm /opt/apache-hive-2.3.2-bin/lib/jackson-jaxrs-json-provider-2.4.6.jar
 rm /opt/apache-hive-2.3.2-bin/lib/jackson-module-jaxb-annotations-2.4.6.jar
 rm /opt/apache-hive-2.3.2-bin/lib/jackson-xc-1.9.13.jar
 
+#enhance debug
+
+sed "s/status = INFO/status = DEBUG/" $HIVE_HOME/conf/hive-log4j2.properties >> $HIVE_HOME/conf/hive-log4j2.properties.tmp && \
+mv $HIVE_HOME/conf/hive-log4j2.properties.tmp $HIVE_HOME/conf/hive-log4j2.properties
+sed "s/property.hive.log.level = INFO/property.hive.log.level = DEBUG/" $HIVE_HOME/conf/hive-log4j2.properties >> $HIVE_HOME/conf/hive-log4j2.properties.tmp && \
+mv $HIVE_HOME/conf/hive-log4j2.properties.tmp $HIVE_HOME/conf/hive-log4j2.properties
+
 
 if [ "$MODE" == "" ]; then
 MODE=$1
