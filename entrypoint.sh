@@ -153,6 +153,17 @@ rm $HIVE_HOME/lib/hadoop-auth-2.7.6.jar
 rm $HADOOP_HOME/share/hadoop/common/lib/hadoop-annotations-2.7.6.jar
 rm $HADOOP_HOME/share/hadoop/common/lib/hadoop-auth-2.7.6.jar
 
+rm /opt/apache-hive-2.3.2-bin/lib/jackson-annotations-2.6.0.jar
+rm /opt/apache-hive-2.3.2-bin/lib/jackson-core-2.6.5.jar
+rm /opt/apache-hive-2.3.2-bin/lib/jackson-databind-2.6.5.jar
+rm /opt/apache-hive-2.3.2-bin/lib/jackson-datatype-joda-2.4.6.jar
+rm /opt/apache-hive-2.3.2-bin/lib/jackson-jaxrs-1.9.13.jar
+rm /opt/apache-hive-2.3.2-bin/lib/jackson-jaxrs-base-2.4.6.jar
+rm /opt/apache-hive-2.3.2-bin/lib/jackson-jaxrs-json-provider-2.4.6.jar
+rm /opt/apache-hive-2.3.2-bin/lib/jackson-module-jaxb-annotations-2.4.6.jar
+rm /opt/apache-hive-2.3.2-bin/lib/jackson-xc-1.9.13.jar
+
+
 if [ "$MODE" == "" ]; then
 MODE=$1
 fi
