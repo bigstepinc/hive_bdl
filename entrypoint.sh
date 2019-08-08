@@ -125,12 +125,16 @@ cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/gcs* $HIVE_HOME/lib/
 cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/google* $HIVE_HOME/lib/
 cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/spring* $HIVE_HOME/lib/
 cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/jackson* $HIVE_HOME/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/hadoop* $HIVE_HOME/lib/
+
 
 cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/bdl* $HADOOP_HOME/share/hadoop/common/lib/
 cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/gcs* $HADOOP_HOME/share/hadoop/common/lib/
 cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/google* $HADOOP_HOME/share/hadoop/common/lib/
 cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/spring* $HADOOP_HOME/share/hadoop/common/lib/
 cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/jackson* $HADOOP_HOME/share/hadoop/common/lib/
+cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/hadoop* $HADOOP_HOME/share/hadoop/common/lib/
+
 
 mkdir /tmp/hive 
 chmod -R 777 /tmp/hive
@@ -141,6 +145,13 @@ bdl -mkdir /spark-warehouse
 cp /core-site.xml /opt/bigstepdatalake-$BDLCL_VERSION/conf/core-site.xml
 cp /core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml
 cp /core-site.xml $HADOOP_HOME/share/hadoop/common/templates/core-site.xml
+
+# fix aws dependencies
+rm $HIVE_HOME/lib/hadoop-annotations-2.7.6.jar
+rm $HIVE_HOME/lib/hadoop-auth-2.7.6.jar
+
+rm $HADOOP_HOME/share/hadoop/common/lib/hadoop-annotations-2.7.6.jar
+rm $HADOOP_HOME/share/hadoop/common/lib/hadoop-auth-2.7.6.jar
 
 if [ "$MODE" == "" ]; then
 MODE=$1
