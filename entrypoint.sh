@@ -163,6 +163,9 @@ rm /opt/apache-hive-2.3.2-bin/lib/jackson-jaxrs-json-provider-2.4.6.jar
 rm /opt/apache-hive-2.3.2-bin/lib/jackson-module-jaxb-annotations-2.4.6.jar
 rm /opt/apache-hive-2.3.2-bin/lib/jackson-xc-1.9.13.jar
 
+cp /opt/bigstepdatalake-0.12.3/lib/hadoop-common-2.7.3.jar /opt/hadoop-2.7.6/share/hadoop/common/
+rm /opt/hadoop-2.7.6/share/hadoop/common/hadoop-common-2.7.6.jar
+
 #enhance debug
 
 sed "s/status = INFO/status = DEBUG/" $HIVE_HOME/conf/hive-log4j2.properties >> $HIVE_HOME/conf/hive-log4j2.properties.tmp && \
