@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo 'export HIVE_VERSION=2.3.2' >> ~/.bashrc
-echo 'export BDLCL_VERSION=0.12.3' >> ~/.bashrc
-echo 'export HADOOP_VERSION=2.7.6' >> ~/.bashrc
+echo 'export BDLCL_VERSION=0.13.3' >> ~/.bashrc
+echo 'export HADOOP_VERSION=2.9.2' >> ~/.bashrc
 
 echo 'export HIVE_HOME=/opt/apache-hive-$HIVE_VERSION-bin' >> ~/.bashrc
 echo 'export HADOOP_HOME=/opt/hadoop-$HADOOP_VERSION' >> ~/.bashrc
@@ -147,24 +147,25 @@ cp /core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml
 cp /core-site.xml $HADOOP_HOME/share/hadoop/common/templates/core-site.xml
 
 # fix aws dependencies
-rm $HIVE_HOME/lib/hadoop-annotations-2.7.6.jar
-rm $HIVE_HOME/lib/hadoop-auth-2.7.6.jar
+#This is commented for this build
+#rm $HIVE_HOME/lib/hadoop-annotations-2.7.6.jar
+#rm $HIVE_HOME/lib/hadoop-auth-2.7.6.jar
 
-rm $HADOOP_HOME/share/hadoop/common/lib/hadoop-annotations-2.7.6.jar
-rm $HADOOP_HOME/share/hadoop/common/lib/hadoop-auth-2.7.6.jar
+#rm $HADOOP_HOME/share/hadoop/common/lib/hadoop-annotations-2.7.6.jar
+#rm $HADOOP_HOME/share/hadoop/common/lib/hadoop-auth-2.7.6.jar
 
-rm /opt/apache-hive-2.3.2-bin/lib/jackson-annotations-2.6.0.jar
-rm /opt/apache-hive-2.3.2-bin/lib/jackson-core-2.6.5.jar
-rm /opt/apache-hive-2.3.2-bin/lib/jackson-databind-2.6.5.jar
-rm /opt/apache-hive-2.3.2-bin/lib/jackson-datatype-joda-2.4.6.jar
-rm /opt/apache-hive-2.3.2-bin/lib/jackson-jaxrs-1.9.13.jar
-rm /opt/apache-hive-2.3.2-bin/lib/jackson-jaxrs-base-2.4.6.jar
-rm /opt/apache-hive-2.3.2-bin/lib/jackson-jaxrs-json-provider-2.4.6.jar
-rm /opt/apache-hive-2.3.2-bin/lib/jackson-module-jaxb-annotations-2.4.6.jar
-rm /opt/apache-hive-2.3.2-bin/lib/jackson-xc-1.9.13.jar
+#rm /opt/apache-hive-2.3.2-bin/lib/jackson-annotations-2.6.0.jar
+#rm /opt/apache-hive-2.3.2-bin/lib/jackson-core-2.6.5.jar
+#rm /opt/apache-hive-2.3.2-bin/lib/jackson-databind-2.6.5.jar
+#rm /opt/apache-hive-2.3.2-bin/lib/jackson-datatype-joda-2.4.6.jar
+#rm /opt/apache-hive-2.3.2-bin/lib/jackson-jaxrs-1.9.13.jar
+#rm /opt/apache-hive-2.3.2-bin/lib/jackson-jaxrs-base-2.4.6.jar
+#rm /opt/apache-hive-2.3.2-bin/lib/jackson-jaxrs-json-provider-2.4.6.jar
+#rm /opt/apache-hive-2.3.2-bin/lib/jackson-module-jaxb-annotations-2.4.6.jar
+#rm /opt/apache-hive-2.3.2-bin/lib/jackson-xc-1.9.13.jar
 
-cp /opt/bigstepdatalake-0.12.3/lib/hadoop-common-2.7.3.jar /opt/hadoop-2.7.6/share/hadoop/common/
-rm /opt/hadoop-2.7.6/share/hadoop/common/hadoop-common-2.7.6.jar
+#cp $BDLCL_HOME/lib/hadoop-common-2.7.3.jar /opt/hadoop-2.9.2/share/hadoop/common/
+#rm /opt/hadoop-2.7.6/share/hadoop/common/hadoop-common-2.7.6.jar
 
 #enhance debug
 
