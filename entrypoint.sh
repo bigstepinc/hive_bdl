@@ -139,12 +139,12 @@ cp /opt/bigstepdatalake-$BDLCL_VERSION/lib/hadoop* $HADOOP_HOME/share/hadoop/com
 mkdir /tmp/hive 
 chmod -R 777 /tmp/hive
 
-bdl -mkdir /spark-warehouse
-
 #fix core-site.xml
 cp /core-site.xml /opt/bigstepdatalake-$BDLCL_VERSION/conf/core-site.xml
 cp /core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml
 cp /core-site.xml $HADOOP_HOME/share/hadoop/common/templates/core-site.xml
+
+bdl -mkdir /spark-warehouse
 
 # fix aws dependencies
 #This is commented for this build
