@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo 'export HIVE_VERSION=2.3.2' >> ~/.bashrc
-echo 'export BDLCL_VERSION=0.13.3' >> ~/.bashrc
+echo 'export BDLCL_VERSION=0.14.1' >> ~/.bashrc
 echo 'export HADOOP_VERSION=2.9.2' >> ~/.bashrc
 
 echo 'export HIVE_HOME=/opt/apache-hive-$HIVE_VERSION-bin' >> ~/.bashrc
